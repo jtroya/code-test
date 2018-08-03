@@ -14,7 +14,7 @@ import {
   export default function(state = initialState, action) {
     switch (action.type) {
       case APP_LOADED:
-        return state;
+        return initialState;
         
       case TUTORIAL_MODAL_OPENED:
         return Object.assign({}, state, {
