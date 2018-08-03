@@ -5,7 +5,7 @@ $boxHeight: 100px;
 $itemsPerRow: 5;
 $fonts: 'avenir next', 'avenir';
 
-$bkgColor: #2196F3;
+$bkgColor: #FFF;
 $bodyColor: #FFF;
 $boxBkgColor: #F3F3F3;
 $textColor: #333;
@@ -15,12 +15,6 @@ $linkColor: #333;
 // $bodyColor: #E3F2FD;
 // $boxBkgColor: #BBDEFB;
 // $textColor: #fff;
-// $linkColor: #333;
-
-// $bkgColor: #242819;
-// $bodyColor: #d9d3e7;
-// $boxBkgColor: #bfbac9;
-// $textColor: #d9d3e7;
 // $linkColor: #333;
 
 body {
@@ -52,6 +46,7 @@ body {
 
 .body {
   background-color: $bodyColor;
+  height: 65vh;
   // display: flex;
 }
 

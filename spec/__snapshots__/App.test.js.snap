@@ -12,9 +12,13 @@ exports[`App matches the snapshot 1`] = `
     >
       <button
         className="btn-tutorial"
+        onClick={[Function]}
       >
         Open
       </button>
+      <Tutorial
+        closeModal={[Function]}
+      />
     </div>
   </div>
 </div>

@@ -4,16 +4,18 @@ export const loadApp = () => ({
   type: types.APP_LOADED
 });
 
-export const tutorialModalOpened = {
+export const openModal = () => ({
   type: types.TUTORIAL_MODAL_OPENED
-};
+});
 
-export const tutorialModalClosed = {
+export const closeModal = {
   type: types.TUTORIAL_MODAL_CLOSED
 };
 
-export const tutorialModalSkiped = {
-  type: types.TUTORIAL_MODAL_SKIPED
+export const skipTutorial = () => {
+  return function (dispatch) {
+    dispatch(closeModal);
+  }
 };
 
 export const changeStep = step => ({

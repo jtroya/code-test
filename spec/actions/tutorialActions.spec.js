@@ -22,24 +22,29 @@ describe('Tutorial actions', () => {
   });
 
   it('should create action tutorialModalOpened', () => {
+    const store = mockStore({
+      showTutorialModal: false,
+      tutorialSkiped: false,
+      currentStep: 0
+    });
     const testAction = {
       type: types.TUTORIAL_MODAL_OPENED
     };
-    expect(actions.tutorialModalOpened).toEqual(testAction);
-  });
-
-  it('should create action tutorialModalClosed', () => {
-    const testAction = {
-      type: types.TUTORIAL_MODAL_CLOSED
-    };
-    expect(actions.tutorialModalClosed).toEqual(testAction);
+    store.dispatch(actions.openModal());
+    expect(store.getActions()).toEqual([testAction]);
   });
 
   it('should create action tutorialModalSkiped', () => {
+    const store = mockStore({
+      showTutorialModal: true,
+      tutorialSkiped: false,
+      currentStep: 1
+    });
     const testAction = {
-      type: types.TUTORIAL_MODAL_SKIPED
+      type: types.TUTORIAL_MODAL_CLOSED
     };
-    expect(actions.tutorialModalSkiped).toEqual(testAction);
+    store.dispatch(actions.skipTutorial());
+    expect(store.getActions()).toEqual([testAction]);
   });
 
   it('should create action changeStep', () => {

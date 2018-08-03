@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { loadApp } from '../actions';
+import { loadApp, openModal, skipTutorial } from '../actions';
 import App from '../components/App';
 
 const mapStateToProps = state => ({
@@ -11,6 +11,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ loadApp }, dispatch);
+  bindActionCreators({ loadApp, openModal, skipTutorial }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

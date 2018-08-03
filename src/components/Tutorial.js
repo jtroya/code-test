@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 
+if (process.env.NODE_ENV !== 'test') ReactModal.setAppElement('#root');
 class Tutorial extends Component {
-  componentDidMount () {
-    this.props.optionChanged();
-  }
 
   handleCloseModal = () => {
-    console.info('close modal');
+    this.props.closeModal();
   }
 
   render () {
+    const { isOpen } = this.props;
     return (
       <div>
-        <button className="btn-tutorial" onClick={ this.handleOpenModal }>Open</button>
         <ReactModal 
-          isOpen={ true }
+          isOpen={ isOpen }
           contentLabel="Minimal Modal Example"
         >
-          <button onClick={ this.handleCloseModal }>Close Modal</button>
+          <div className="header">
+            <h2>What I need to know to create a Bot?</h2>
+          </div>
+          <div className="body"></div>
+          <div className="footer">
+            <button onClick={ this.handleCloseModal }>Skip tutorial</button>
+          </div>
         </ReactModal>
       </div>
     );
