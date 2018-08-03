@@ -1,0 +1,130 @@
+// Shared Variables
+$headerHeight: 60px;
+$footerHeight: 60px;
+$boxHeight: 100px;
+$itemsPerRow: 5;
+$fonts: 'avenir next', 'avenir';
+
+$bkgColor: #2196F3;
+$bodyColor: #FFF;
+$boxBkgColor: #F3F3F3;
+$textColor: #333;
+$linkColor: #333;
+
+// $bkgColor: #2196F3;
+// $bodyColor: #E3F2FD;
+// $boxBkgColor: #BBDEFB;
+// $textColor: #fff;
+// $linkColor: #333;
+
+// $bkgColor: #242819;
+// $bodyColor: #d9d3e7;
+// $boxBkgColor: #bfbac9;
+// $textColor: #d9d3e7;
+// $linkColor: #333;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $fonts;
+}
+  
+.container div {
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+  
+.header {
+  background-color: $bkgColor;
+  color: $textColor;
+}
+
+.footer {
+  background-color: $bkgColor;
+  color: $textColor;
+}
+  
+.App {
+  display: block;
+  // flex-direction: row;
+}
+
+.body {
+  background-color: $bodyColor;
+  // display: flex;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.btn-tutorial {
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+.container-article {
+  display: block;
+}
+  
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $headerHeight;
+}
+  
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $footerHeight;
+}
+
+.box {
+  background-color: $boxBkgColor;
+  display: block;
+  border: 1px solid $boxBkgColor;
+  margin: 10px;
+  padding: 9px 9px;
+}
+
+.link-article {
+  color: $linkColor;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  .container {
+      justify-content: center;
+  }
+
+  .box {
+    flex-basis: 100%;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .container {
+    justify-content: flex-start;
+  }
+
+  .box {
+    flex-basis: 25%;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .container {
+    justify-content: flex-start;
+  }
+
+  .box {
+    flex-basis: 100% / $itemsPerRow;
+  }
+}
